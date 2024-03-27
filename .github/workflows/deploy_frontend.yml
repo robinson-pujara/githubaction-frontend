@@ -35,5 +35,5 @@ jobs:
       run: aws s3 sync ./dist s3://robin-gitaction --delete
 
     - name: Invalidate CloudFront Cache
-      run: aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"
+      run: aws cloudfront create-invalidation --distribution-id EMOFLLTKSQQ70 --paths "/*"
 
