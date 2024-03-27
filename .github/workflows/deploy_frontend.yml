@@ -3,7 +3,7 @@ name: Deploy Frontend Application
 on:
   push:
     branches:
-      - main  # Set this to your default branch
+      - main
 
 jobs:
   deploy:
@@ -14,12 +14,21 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Setup Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: '18.20.0' 
+        node-version: '18.20.0'
+        cache: 'yarn' 
 
     - name: Install Dependencies
       run: yarn install
+
+    - name: Increase Version
+      run: |
+        git config --global user.email "robinsonpujara@gmail.com"
+        git config --global user.name "Robinson"
+        yarn version --minor --no-git-tag-version
+      env:
+        CI: true
 
     - name: Build Project
       run: yarn build
@@ -37,3 +46,8 @@ jobs:
     - name: Invalidate CloudFront Cache
       run: aws cloudfront create-invalidation --distribution-id EMOFLLTKSQQ70 --paths "/*"
 
+    # Commit and push the updated package.json with new version
+    - name: Commit version bump
+      run: |
+        git commit -am "Bump version"
+        git push
