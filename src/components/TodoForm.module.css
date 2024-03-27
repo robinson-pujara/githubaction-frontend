@@ -1,0 +1,51 @@
+/* TodoForm.module.css */
+.todoForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .inputTitle,
+  .inputDescription {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .checkboxContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .inputCheckbox {
+    margin-left: 8px;
+  }
+  
+  .formActions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .submitButton,
+  .cancelButton {
+    
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .submitButton {
+    color: black;
+    background-color: #14cf1d; /* Green */
+    color: rgb(27, 146, 144);
+  }
+  
+  .cancelButton {
+    background-color: #f44336; /* Red */
+    color: rgb(106, 28, 28);
+  }
+  

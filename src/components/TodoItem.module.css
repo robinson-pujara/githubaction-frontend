@@ -1,0 +1,26 @@
+.todoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px;
+  background-color: #21d42a;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.todoContent h3.completed {
+  text-decoration: line-through; 
+  color: #24323e;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.toggleCompletion {
+  display: flex;
+  align-items: center;
+}
+
